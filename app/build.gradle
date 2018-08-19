@@ -31,10 +31,28 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    flavorDimensions "freeOrPaid"
+
+    productFlavors {
+        paid {
+            dimension "freeOrPaid"
+            applicationIdSuffix ".paid"
+            versionNameSuffix "-paid"
+        }
+        free {
+            dimension "freeOrPaid"
+            applicationIdSuffix ".free"
+            versionNameSuffix "-free"
+        }
+
+    }
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
+    implementation 'com.android.support:support-v4:26.1.0'
     endpointsServer project(path: ':backend', configuration: 'endpoints')
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support:support-media-compat:27.1.1'
