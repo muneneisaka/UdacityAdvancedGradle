@@ -12,6 +12,8 @@ import com.munenendereba.joketellingandlib.TellJokesActivity;
 
 public class MainActivity extends AppCompatActivity {
 
+    private String IntentExtra = TellJokesActivity.JOKES_INTENT_EXTRA;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             protected void onPostExecute(String result) {
                 super.onPostExecute(result);
-                intentToAndLib.putExtra("jokeFromJavaLibViaApp", result);
+                intentToAndLib.putExtra(IntentExtra, result);
                 startActivity(intentToAndLib);
             }
         };

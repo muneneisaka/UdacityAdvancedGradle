@@ -10,6 +10,8 @@ public class TellJokesActivity extends AppCompatActivity {
 
     TextView textView;
 
+    public static final String JOKES_INTENT_EXTRA = "jokeFromJavaLibViaApp";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +24,7 @@ public class TellJokesActivity extends AppCompatActivity {
 
     private void tellJoke() {
         Intent intent = getIntent();
-        String theJoke = intent.getStringExtra("jokeFromJavaLibViaApp");
+        String theJoke = intent.getStringExtra(JOKES_INTENT_EXTRA);
 
         textView.setText(theJoke);
         Toast.makeText(this, theJoke, Toast.LENGTH_LONG).show();
