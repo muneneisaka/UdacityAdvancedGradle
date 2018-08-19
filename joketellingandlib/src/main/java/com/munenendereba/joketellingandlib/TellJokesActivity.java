@@ -25,6 +25,6 @@ public class TellJokesActivity extends AppCompatActivity {
         String theJoke = intent.getStringExtra("jokeFromJavaLibViaApp");
 
         textView.setText(theJoke);
-        Toast.makeText(this, theJoke, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, theJoke, Toast.LENGTH_LONG).show();
     }
 }
